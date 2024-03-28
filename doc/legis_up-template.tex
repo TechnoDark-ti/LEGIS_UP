@@ -1,11 +1,14 @@
 \documentclass[12pt]{article}
 
-\usepackage[T1]{fontenc}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+
+\addbibresource{references.bib}
 
 \usepackage{sbc-template}
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
+\usepackage{biblatex}
 
 \sloppy
 
@@ -33,12 +36,18 @@
 
 \section{Introdução}
 
-A palavra "parlamento" tem origem no grego antigo. Ela deriva do termo grego ``$\pi\alpha\rho\alpha\lambda\eta\mu\beta\epsilon\iota\nu$'' (paralēmpein), que significa ``falar ao lado de'' ou ``discutir''. O prefixo "para-" indica "ao lado de", enquanto "lēmpein" se refere a "falar". Essa raiz etimológica reflete a natureza essencial de um parlamento como um local onde os representantes do povo se reúnem para discutir e deliberar questões de interesse público O conceito de parlamento, como o entendemos hoje, tem suas origens na Grécia antiga, onde a democracia direta era praticada em cidades-estado como Atenas (SATHLER, 2016). Os cidadãos se reuniam em assembleias para discutir e votar em questões políticas. Essa tradição de participação democrática influenciou o desenvolvimento das instituições parlamentares ao longo da história, inclusive na Europa medieval e moderna. Com o advento das revoluções industriais, a globalização tem causado desafios e impactos nos serviços públicos em todo o mundo, mais especificamente nas Câmaras Municipais (EIRÃO, 2013). 
-O Poder Legislativo tem como função central a elaboração das leis, ao lado de exercer outras tarefas constitucionais como a apresentação pública de assuntos de interesse dos cidadãos, o debate sobre tais reivindicações de modo a agrega-las sob o interesse geral e a fiscalização política dos atos do executivo. Na lista de competências da Câmara Municipal, enumeradas pela Constituição, a principal é a de fazer, suspender, interpretar e revogar as leis de competência do Município. Outras funções do Poder Legislativo Municipal são fiscalizar e controlar os atos do Poder Executivo; funções administrativas internas de organização de seus serviços e uma função política adicional: a de representar o povo em suas queixas e reivindicações, operando como uma ouvidoria geral da sociedade.
-Chama-se de Processo Legislativo todo conjunto de atos realizados pelos órgãos do Poder Legislativo, de acordo com regras previamente fixadas, para elaborar normas jurídicas (emendas à Constituição, leis complementares, leis ordinárias e outros tipos normativos dispostos no art. 59 da Constituição Federal).  
-"Processo legislativo é o conjunto de ações realizadas pelos órgãos do poder legislativo com o objetivo de proceder à elaboração das leis sejam elas constitucionais complementares e ordinárias bem como as resoluções e decretos legislativos". (BRASIL, 2011).
+A palavra "parlamento" tem origem no grego antigo. Ela deriva do termo grego ``$\pi\alpha\rho\alpha\lambda\eta\mu\beta\epsilon\iota\nu$'' (paralēmpein), que significa ``falar ao lado de'' ou ``discutir''. O prefixo "para-" indica "ao lado de", enquanto "lēmpein" se refere a "falar". Essa raiz etimológica reflete a natureza essencial de um parlamento como um local onde os representantes do povo se reúnem para discutir e deliberar questões de interesse público O conceito de parlamento, como o entendemos hoje, tem suas origens na Grécia antiga, onde a democracia direta era praticada em cidades-estado como Atenas \parencite{sathler2016representaccao}. Os cidadãos se reuniam em assembleias para discutir e votar em questões políticas. Essa tradição de participação democrática influenciou o desenvolvimento das instituições parlamentares ao longo da história, inclusive na Europa medieval e moderna. Com o advento das revoluções industriais, a globalização tem causado desafios e impactos nos serviços públicos em todo o mundo, mais especificamente nas Câmaras Municipais \parencite{eirao2013sistema}.\\
+ 
+O Poder Legislativo tem como função central a elaboração das leis, ao lado de exercer outras tarefas constitucionais como a apresentação pública de assuntos de interesse dos cidadãos, o debate sobre tais reivindicações de modo a agrega-las sob o interesse geral e a fiscalização política dos atos do executivo. Na lista de competências da Câmara Municipal, enumeradas pela Constituição, a principal é a de fazer, suspender, interpretar e revogar as leis de competência do Município. Outras funções do Poder Legislativo Municipal são fiscalizar e controlar os atos do Poder Executivo; funções administrativas internas de organização de seus serviços e uma função política adicional: a de representar o povo em suas queixas e reivindicações, operando como uma ouvidoria geral da sociedade.\\
 
-Nesse contexto, atualmente muitos Poderes Legislativos ainda não usufruem de um sistema informatizado de processo legislativo, seja para acompanhamento de pautas, tramitações de projetos de leis, acesso às leis, que ofereça aos cidadãos a transparência dos atos legislativos, assim como a serviços que requerem celeridade, redução de custos, organização e clareza de informações.
+Chama-se de Processo Legislativo todo conjunto de atos realizados pelos órgãos do Poder Legislativo, de acordo com regras previamente fixadas, para elaborar normas jurídicas (emendas à Constituição, leis complementares, leis ordinárias e outros tipos normativos dispostos no art. 59 da Constituição Federal).  
+
+\begin{quote}
+``Processo legislativo é o conjunto de ações realizadas pelos órgãos do poder legislativo com o objetivo de proceder à elaboração das leis sejam elas constitucionais complementares e ordinárias bem como as resoluções e decretos legislativos''. (BRASIL, 2011).
+\end{quote}
+
+Nesse contexto, atualmente muitos Poderes Legislativos ainda não usufruem de um sistema informatizado de processo legislativo, seja para acompanhamento de pautas, tramitações de projetos de leis, acesso às leis, que ofereça aos cidadãos a transparência dos atos legislativos, assim como a serviços que requerem celeridade, redução de custos, organização e clareza de informações.\\
+
 A automatização dos processos legislativos por meio de um protótipo de software representaria um avanço significativo na modernização e na eficiência do Poder Legislativo. Uma solução tecnológica que atenderia às necessidades específicas do contexto legislativo, proporcionando uma gestão mais eficiente e transparente das atividades legislativas.
 
 
@@ -55,6 +64,8 @@ A automatização dos processos legislativos por meio de um protótipo de softwa
 \subsection{Protótipo do Legis Up}
 \section{Resultados Esperados}
 \section{Considerações Finais}
-\section{Referências Bibliográficas}
+
+
+\printbibliography
 
 \end{document}
