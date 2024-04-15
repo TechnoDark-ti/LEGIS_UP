@@ -1,0 +1,33 @@
+CREATE TABLE "Parlamentar" (
+	"id_parlamentar"	INTEGER,
+	"nome"	INTEGER NOT NULL,
+	"partido"	INTEGER NOT NULL,
+	"cargo"	INTEGER NOT NULL,
+	"data_nasc"	INTEGER NOT NULL,
+	PRIMARY KEY("id_parlamentar" AUTOINCREMENT)
+)
+CREATE TABLE "Plenario" (
+	"id_plenario"	INTEGER,
+	"data_inicio"	INTEGER NOT NULL,
+	"data_fim"	INTEGER NOT NULL,
+	"descricao"	INTEGER NOT NULL,
+	"local"	INTEGER NOT NULL,
+	"legislatura"	INTEGER NOT NULL,
+	"id_parlamentar_fk"	INTEGER,
+	"id_sessao_fk"	INTEGER,
+	FOREIGN KEY("id_parlamentar_fk") REFERENCES "Parlamentar"("id_parlamentar"),
+	FOREIGN KEY("id_sessao_fk") REFERENCES "Sessoes"("id_sessao"),
+	PRIMARY KEY("id_plenario" AUTOINCREMENT)
+)
+CREATE TABLE "Sessoes" (
+	"id_sessao"	INTEGER,
+	"pauta"	INTEGER NOT NULL,
+	"data"	INTEGER NOT NULL,
+	"horario"	INTEGER NOT NULL,
+	"tipo"	INTEGER NOT NULL,
+	"id_plenario_fk"	INTEGER,
+	"id_parlamentar_fk"	INTEGER,
+	FOREIGN KEY("id_plenario_fk") REFERENCES "Plenario"("id_plenario"),
+	FOREIGN KEY("id_parlamentar_fk") REFERENCES "Parlamentar"("id_parlamentar"),
+	PRIMARY KEY("id_sessao" AUTOINCREMENT)
+)
