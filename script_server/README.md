@@ -8,7 +8,7 @@ As tecnologias utilizadas nessa branch será:
  - Docker
  - Apache
  - MySQL
-
+---
 
 ## Server
  Configuração do Servidor:
