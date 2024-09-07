@@ -1,4 +1,4 @@
-package legisup1.legisup;
+package Entidades;
 
 public class Entidy {
     private String nome;
