@@ -1,4 +1,8 @@
-CREATE DATABASE IF NOT EXITS LGSP_bd;
+CREATE DATABASE IF NOT EXISTS LGSP_bd;
+
+USE LGSP_bd;
+
+DROP DATABASE LGSP_bd;
 
 CREATE TABLE IF NOT EXISTS Departamento (
   departamento_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -15,16 +19,16 @@ CREATE TABLE IF NOT EXISTS Funcionario (
     
   FOREIGN KEY (departamento_id) REFERENCES Departamento(departamento_id)
 );
-
+-- dar razionho
 CREATE TABLE IF NOT EXISTS Folha_Pagamento (
   folha_id INT PRIMARY KEY AUTO_INCREMENT,
-  funcionario_id INT,
+  cpf_fk INT,
   mes INT,
   ano INT,
   valor_bruto DECIMAL(10,2),
   valor_liquido DECIMAL(10,2),
   descontos DECIMAL(10,2),
-  FOREIGN KEY (funcionario_id) REFERENCES Funcionario(cpf)
+  FOREIGN KEY (cpf_fk) REFERENCES Funcionario(cpf)
 );
 
 
@@ -59,24 +63,24 @@ CREATE TABLE IF NOT EXISTS Sessao (
   ata TEXT,
   status VARCHAR(20)
 );
-
+-- dar raiozinho
 CREATE TABLE IF NOT EXISTS Votacao (
   votacao_id INT PRIMARY KEY AUTO_INCREMENT,
   sessao_id INT,
-  funcionario_id INT,
+  cpf_fk INT,
   voto VARCHAR(10),
   justificativa TEXT,
   FOREIGN KEY (sessao_id) REFERENCES Sessao(sessao_id),
-  FOREIGN KEY (funcionario_id) REFERENCES Funcionario(funcionario_id)
+  FOREIGN KEY (cpf_fk) REFERENCES Funcionario(cpf)
 );
-
+-- dar raiozinho
 CREATE TABLE IF NOT EXISTS Protocolo (
   protocolo_id INT PRIMARY KEY AUTO_INCREMENT,
-  funcionario_id INT,
+  cpf_fk INT,
   data_abertura DATE,
   descricao TEXT,
   status VARCHAR(20),
-  FOREIGN KEY (funcionario_id) REFERENCES Funcionario(cpf)
+  FOREIGN KEY (cpf_fk) REFERENCES Funcionario(cpf)
 );
 
 CREATE TABLE IF NOT EXISTS Patrimonio (
@@ -88,7 +92,7 @@ CREATE TABLE IF NOT EXISTS Patrimonio (
 );
 
 CREATE TABLE IF NOT EXISTS Fornecedor (
-  fornecedor_id INT PRIMARY KEY AUTO_INCREMENT,
+  CNPJ INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(100),
   CNPJ VARCHAR(14),
   contato VARCHAR(100)
