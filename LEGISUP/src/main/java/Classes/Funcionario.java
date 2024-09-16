@@ -9,13 +9,13 @@ package Classes;
  * @author marcio.moda
  */
 public class Funcionario {
-    public int cpf;
+    public String cpf;
     public String nome;
     public String cargo;
     public int departamento_id;
     public double salario;
 
-    public Funcionario(int cpf, String nome, String cargo, int departamento_id, double salario) {
+    public Funcionario(String cpf, String nome, String cargo, int departamento_id, double salario) {
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;
@@ -23,11 +23,11 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
