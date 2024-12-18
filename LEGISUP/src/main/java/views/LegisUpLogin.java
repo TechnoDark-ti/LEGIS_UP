@@ -53,7 +53,7 @@ public class LegisUpLogin extends JFrame {
         loginButton = new JButton("Login");
         loginButton.setBounds(50, 220, 300, 30);
         loginButton.setBackground(Color.BLACK);
-        loginButton.setForeground(Color.WHITE);
+        loginButton.setForeground(Color.BLACK);
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
