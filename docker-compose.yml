@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: legisup-db
+    restart: always
+    environment:
+      POSTGRES_DB: legisup_db
+      POSTGRES_USER: legisup_user
+      POSTGRES_PASSWORD: secretpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - legisup-network
+
+  backend:
+    build: ./legisup-backend
+    container_name: legisup-api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/legisup_db
+      SPRING_DATASOURCE_USERNAME: legisup_user
+      SPRING_DATASOURCE_PASSWORD: secretpassword
+    depends_on:
+      - postgres
+    networks:
+      - legisup-network
+
+  frontend:
+    build: ./legisup-frontend
+    container_name: legisup-web
+    restart: always
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    networks:
+      - legisup-network
+
+volumes:
+  pgdata:
+
+networks:
+  legisup-network:
+    driver: bridge
